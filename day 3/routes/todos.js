@@ -55,7 +55,7 @@ router.delete("/:id", async function (req, res) {
 	res.status(200).json(r);
 });
 
-router.patch("/:id", (req, res) => {
+router.patch("/:id", async (req, res) => {
 	const { title, userId, status, tags } = req.body;
 
 	const todo = await updateTodo(req.params.id, title, userId, status, tags);
